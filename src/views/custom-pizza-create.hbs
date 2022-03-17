@@ -8,8 +8,56 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+       <form id="container" action="/custom-pizza-submit" method="GET">
+           <h1>Build Your Own Pizza</h1>
+        <p>
+            <label for="size">
+            <b>Size</b>
+            </label>
+            <select name="size" id="size">
+                <option value="Large">Large</option>
+                <option value="Medium">Medium</option>
+                <option value="Small">Small</option>
+            </select>
+        </p>
 
+        <p>
+            <label for="toppingsCount"><b>How many toppings?</b></label>
+            <input name="toppingsCount"/>
+        </p>
 
+        <ul>
+            <li>Pepperoni</li>
+            <li>Sausage</li>
+            <li>Chicken</li>
+            <li>Mushroom</li>
+            <li>Olive</li>
+            <li>Green Pepper</li>
+            <li>Onion</li>
+            <li>Banana Pepper</li>
+            <li>Anchovies</li>
+            <li>Pineapple</li>
+        </ul>
 
+        <p>
+            <input type="checkbox" id="crust" name="crust" value="glutenFree">
+            <label for="crust"> <b>Gluten-Free Crust?</b> ($2.00 extra)</label>
+        </p>
+
+        <p>
+            <label for="instructions">
+                <b>Special Instructions (Optional)</b>
+            </label>
+            <div>
+                <textarea name="instructions" id="instructions"></textarea>
+            </div>
+        </p>
+
+        <p>
+			<button type="submit">Calculate Price</button>
+			<a href="/">Nevermind</a>
+		</p>
+
+       </form>
   </body>
   </html>
