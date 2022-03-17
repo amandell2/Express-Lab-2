@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pizza Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <div id="container">
+        <header>
+            <p>Welcome to Express Pizza</p>
+        </header>
+        <section>
+            <h1>Speciality Pizza</h1>
+            <ul>
+                <li><a href="/specialty-pizza?name=Anchovy+Lover's&price=$15.99">Anchovy Lover's</a></li>
+                <li><a href="/specialty-pizza?name=Paleo+Pizza&price=$13.99">Paleo Pizza</a></li>
+                <li><a href="/specialty-pizza?name=Dessert+Pizza&price=$14.99">Dessert Pizza</a></li>
+            </ul>
+        </section>
+        <section>
+            <h1>Custom Pizza</h1>
+            <a href="/custom-pizza-create">Build your own!</a>
+        </section>
+        <section>
+            <h1>Leave a Review</h1>
+            <a href="/review">Click here to leave a review.</a>
+        </section>
+        <div>
+            <img id="pic" src="pizza-pic.png"/>
+        </div>
+      </div>
+  </body>
+</html>
