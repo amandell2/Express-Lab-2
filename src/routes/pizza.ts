@@ -10,10 +10,10 @@ routes.get('/', (req, res) => {
 
 routes.get('/specialty-pizza', (req, res) => {
     const pizzaName: string = req.query.name as string;
-    const price: string = req.query.price as string;
+    const price: number = parseInt(req.query.price as string);
     res.render('specialty-pizza', {
         name: pizzaName,
-        price: price
+        price: price.toFixed(2)
     });
 });
 
@@ -40,30 +40,21 @@ routes.get("/confirmation", (req, res) => {
 })
 
 routes.get("/custom-pizza-create", (req, res) => {
-    const size = req.query.size as string;
-    const toppings = Number(req.query.toppings);
-    const glutenFree: boolean = !!req.query.crust;
-    const instructions = req.query.instructions as string;
-    res.render('custom-pizza-create',{
-        size: size,
-        toppings: toppings,
-        crust: glutenFree,
-        instructions: instructions
-    });
+    res.render('custom-pizza-create');
 })
 
-routes.get("/custom-pizza-submit", (req, res) => {
-    const size = req.query.size as string;
-    const toppings: number = Number(req.query.toppings);
-    const glutenFree: boolean = !!req.query.crust;
-    const instructions = req.query.instructions as string;
+routes.post("/custom-pizza-submit", (req, res) => {
+    const size: string = req.body.size;
+    const toppings: number = parseInt(req.body.toppings as string);
+    const glutenFree: boolean = !!req.body.crust;
+    const instructions: string = req.body.instructions;
     let price = 0;
-    if(size === "small"){
-       price += 7+(toppings*0.5) 
-    }else if(size=== "medium"){
-        price += 10+(toppings*1)
-    }else if(size === "large"){
-        price += 12+(toppings*1.25)
+    if(size === "Small"){
+       price = 7+(toppings*0.5) 
+    }else if(size=== "Medium"){
+        price = 10+(toppings*1)
+    }else if(size === "Large"){
+        price = 12+(toppings*1.25)
     };
     if(glutenFree){
         price += 2
